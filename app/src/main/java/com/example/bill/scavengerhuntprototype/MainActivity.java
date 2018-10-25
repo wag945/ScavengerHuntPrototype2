@@ -1,0 +1,49 @@
+package com.example.bill.scavengerhuntprototype;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+import android.widget.Button;
+
+
+public class MainActivity extends AppCompatActivity {
+
+    private Button mCreateGameButton;
+    private Button mCreateTeamButton;
+    private Button mPlayGameButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mCreateTeamButton = (Button) findViewById(R.id.mCreateTeam);
+        mCreateTeamButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, CreateTeam.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+
+        mCreateGameButton = (Button) findViewById(R.id.mCreateGame);
+        mCreateGameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, CreateGame.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+
+        mPlayGameButton = (Button) findViewById(R.id.mPlayGame);
+        mPlayGameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, PlayGame.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+    }
+}
