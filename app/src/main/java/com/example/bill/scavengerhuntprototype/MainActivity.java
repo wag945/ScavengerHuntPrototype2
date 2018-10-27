@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.util.Log;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -12,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mCreateGameButton;
     private Button mCreateTeamButton;
     private Button mPlayGameButton;
+    private Team mTeam;
+    private String appName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,5 +47,15 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(myIntent);
             }
         });
+
+        //Test the Team class
+        appName = "ScavengerHuntPrototype";
+
+        mTeam = new Team();
+        mTeam.setName("Team 1");
+        Log.w(appName, "Test get Team name: "+mTeam.getName());
+        mTeam.setNumLosses(2);
+        mTeam.setNumWins(3);
+        Log.w(appName,"Test get Team record: "+mTeam.getRecord());
     }
 }
