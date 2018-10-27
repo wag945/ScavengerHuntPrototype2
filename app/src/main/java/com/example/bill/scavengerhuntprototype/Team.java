@@ -35,7 +35,9 @@ public class Team {
     }
 
     public void setNumWins(int value) {
-        numWins = value;
+        if (value > 0) {
+            numWins = value;
+        }
     }
 
     public int getNumLosses() {
@@ -43,7 +45,9 @@ public class Team {
     }
 
     public void setNumLosses(int value) {
-        numLosses = value;
+        if (value > 0) {
+            numLosses = value;
+        }
     }
 
     public String getRecord() {

@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    protected void onStart() {
+        super.onStart();
+
         //Test the Team class
         appName = "ScavengerHuntPrototype";
 
