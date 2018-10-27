@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mPlayGameButton;
     private Team mTeam;
     private String appName;
+    private Game mGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,5 +71,18 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < players.size(); i++) {
             Log.w(appName, "Player: " + players.elementAt(i));
         }
+
+        //Test the Game class
+        mGame = new Game(1);
+        mGame.addTeam(mTeam);
+        Vector<Team> teams = mGame.getTeams();
+        for (int i = 0; i < teams.size(); i++) {
+            Log.w(appName, "Team: " + teams.elementAt(i).getName());
+        }
+        Log.w(appName,"Game state before start: "+mGame.getGameStatus());
+        mGame.startGame();
+        Log.w(appName,"Game state after start: "+mGame.getGameStatus());
+        mGame.stopGame();
+        Log.w(appName,"Game state after stop: "+mGame.getGameStatus());
     }
 }

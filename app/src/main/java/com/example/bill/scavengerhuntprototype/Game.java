@@ -8,15 +8,20 @@ public class Game {
     //Replace this with the real ScavengedItem class
     private Vector<Integer> mScavengedItems;
     private Timer mTimer;
+    //Need a timer task to run the timer
+
     enum GameState {
         NOT_STARTED,
         IN_PROGRESS,
         ENDED
     };
+    GameState mGameState;
     private static final int mMaxTeams = 5;
 
     public Game(int gameId) {
         mGameId = gameId;
+        mGameState = GameState.NOT_STARTED;
+        mTeams = new Vector<Team>();
     }
 
     public void addTeam(Team team) {
@@ -38,6 +43,14 @@ public class Game {
     }
 
     public void startGame() {
+        mGameState = GameState.IN_PROGRESS;
+    }
 
+    public void stopGame() {
+        mGameState = GameState.ENDED;
+    }
+
+    public GameState getGameStatus() {
+        return mGameState;
     }
 }
