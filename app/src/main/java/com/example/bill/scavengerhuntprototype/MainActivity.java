@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.util.Log;
+import java.util.Vector;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -57,5 +58,12 @@ public class MainActivity extends AppCompatActivity {
         mTeam.setNumLosses(2);
         mTeam.setNumWins(3);
         Log.w(appName,"Test get Team record: "+mTeam.getRecord());
+        mTeam.addPlayer("Bill G");
+        mTeam.addPlayer("Bill Z");
+        mTeam.addPlayer("Brandon");
+        Vector<String> players = mTeam.getPlayers();
+        for (int i = 0; i < players.size(); i++) {
+            Log.w(appName, "Player: " + players.elementAt(i));
+        }
     }
 }
