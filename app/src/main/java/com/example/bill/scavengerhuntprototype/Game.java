@@ -1,6 +1,7 @@
 package com.example.bill.scavengerhuntprototype;
 import java.util.Vector;
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class Game {
     private int mGameId;
@@ -8,6 +9,7 @@ public class Game {
     //Replace this with the real ScavengedItem class
     private Vector<Integer> mScavengedItems;
     private Timer mTimer;
+    private GameTimer mGameTimer;
     //Need a timer task to run the timer
 
     enum GameState {
@@ -43,10 +45,15 @@ public class Game {
     }
 
     public void startGame() {
+        mTimer = new Timer();
+        mGameTimer = new GameTimer();
+        //Start a timer to run immediately and repeat every second
+        mTimer.schedule(mGameTimer,0,1000);
         mGameState = GameState.IN_PROGRESS;
     }
 
     public void stopGame() {
+        mGameTimer.cancel();
         mGameState = GameState.ENDED;
     }
 
