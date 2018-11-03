@@ -16,4 +16,12 @@ public class ScavengeItem {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Boolean getFound() {
+        return found;
+    }
+
+    public void setFound(Boolean found) {
+        this.found = found;
+    }
 }
