@@ -82,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
         Log.w(appName,"Game state before start: "+mGame.getGameStatus());
         mGame.startGame();
         Log.w(appName,"Game state after start: "+mGame.getGameStatus());
+    }
+
+    protected void onStop()
+    {
+        super.onStop();
         mGame.stopGame();
         Log.w(appName,"Game state after stop: "+mGame.getGameStatus());
     }

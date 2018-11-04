@@ -1,6 +1,5 @@
 package com.example.bill.scavengerhuntprototype;
 
-import java.util.Timer;
 import java.util.TimerTask;
 import android.util.Log;
 
