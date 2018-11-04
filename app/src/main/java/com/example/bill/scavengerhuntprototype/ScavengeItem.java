@@ -1,0 +1,19 @@
+package com.example.bill.scavengerhuntprototype;
+
+public class ScavengeItem {
+    private String name;
+    private Boolean found;
+
+    public ScavengeItem(String name) {
+        this.name = name;
+        this.found = false;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
