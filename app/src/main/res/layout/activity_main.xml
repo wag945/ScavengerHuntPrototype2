@@ -7,46 +7,25 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/mCreateTeam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="195dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="195dp"
-        android:background="@color/colorPrimary"
-        android:text="Create Team"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/status_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Sign out"
+            android:id="@+id/signOutButton"/>
 
-    <Button
-        android:id="@+id/mCreateGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="195dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="195dp"
-        android:background="@color/colorPrimary"
-        android:text="Create Game"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mCreateTeam" />
-
-    <Button
-        android:id="@+id/mPlayGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="195dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="195dp"
-        android:background="@color/colorPrimary"
-        android:text="Play Game"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mCreateGame" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
