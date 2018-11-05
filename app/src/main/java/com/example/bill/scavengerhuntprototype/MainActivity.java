@@ -86,19 +86,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         } else {
 
         }
-<<<<<<< HEAD
-        Log.w(appName,"Game state before start: "+mGame.getGameStatus());
-        mGame.startGame();
-        Log.w(appName,"Game state after start: "+mGame.getGameStatus());
-    }
-
-    protected void onStop()
-    {
-        super.onStop();
-        mGame.stopGame();
-        Log.w(appName,"Game state after stop: "+mGame.getGameStatus());
-=======
->>>>>>> d3e8fb95a032b6f46150c448cf9f8a694b598bfc
     }
 
     @Override
